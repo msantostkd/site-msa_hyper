@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <title>MSA Hyperautomação</title>
+</head>
+<body>
+  <!--MENU SUPERIOR-->
+  <header id="menusuperior">
+    <div class="container-menu">
+      <a href="https://msantostkd.github.io/portifolio-mauricio/">
+        <img src="./imagens/logo.svg" id="logo" alt="Logo MSA">
+      </a>
+      <div class="texto-menu">
+        <h1 id="titulo-menu">MSA Hyperautomação</h1>
+        <p id="texto-menusuperior">
+          Transformando desafios operacionais <br>
+          em resultados sustentáveis, unindo inteligência, <br>
+          automação e excelência em processos.
+        </p>
+      </div>
+    </div>
+  </header>
+  <!--MENU SOBRE-->
+  <div id="sobre">
+      
+      <h2>Sobre nós</h2>
+      <p>A MSA Hyperautomação é uma consultoria especializada em RPA, integração de sistemas, BI e otimização de processos.<br>
+        Atuamos com foco em gerar eficiência operacional e inovação contínua para empresas de todos os portes.</p>
+   
+  </div>
+
+  <div id="servicos">    
+    <section class="servicos">
+      <h2>Nossos Serviços</h2>
+
+    <div class="servicos-destaque">
+       <div class="bloco-servico">
+        <img src="./imagens/automation.svg" alt="Ícone RPA">
+        <h3>Automação Inteligente com RPA</h3>
+        <p>Expertise em desenvolvimento, implantação e governança de automações utilizando plataformas líderes como Automation Anywhere (v11 e A360), Blue Prism, Power Automate e UiPath. Experiência em C# para extensibilidade e soluções personalizadas.</p>
+        </div>
+
+        <div class="bloco-servico">
+        <img src="./imagens/cloud_architecture.svg" alt="Ícone Cloud">
+        <h3>Arquitetura de Soluções e Cloud</h3>
+        <p>Capacidade de traduzir requisitos de negócio em soluções arquitetônicas robustas e escaláveis. Vivência em ambientes Cloud (Azure, AWS, GCP), containers (Kubernetes/AKS), Databricks e DataFactory.</p>
+        </div>
+
+        <div class="bloco-servico">
+        <img src="./imagens/fullstack_agile.svg" alt="Ícone Dev">
+        <h3>Desenvolvimento Full-Stack &<br>Metodologias Ágeis</h3>
+        <p>Proficiência em JavaScript, Python, C# e frameworks (SpringBoot, FastAPI, Flask). Experiência com CI/CD, Git e metodologias ágeis (SCRUM, Lean Digital) para entrega contínua e eficiente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contato">
+  <h2>Contato</h2>
+  <form id="formulario">
+    <input type="text" name="nome" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu e-mail" required />
+    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+  </div>
+
+<script>
+  const form = document.getElementById("formulario");
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbzfYwsUezFntSNmH_uIgoq8aZR0gqniVw-gkOJKQPr2DqFFpFq1OakVy6dw4t1uzj7A/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      nome: form.nome.value,
+      email: form.email.value,
+      mensagem: form.mensagem.value
+    })
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert("Mensagem enviada com sucesso!");
+    form.reset();
+  })
+  .catch(() => {
+    alert("Ocorreu um erro ao enviar sua mensagem.");
+  });
+}); 
+</script> 
+
+  <footer>
+    <p>&copy; 2025 MSA Hyperautomação | Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
