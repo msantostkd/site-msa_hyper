@@ -62,7 +62,7 @@
 
     <section class="contato">
   <h2>Contato</h2>
-  <form id="formulario">
+  <form action="https://api.sheetmonkey.io/form/wo6qLqoQErV9c96r11qxCH" method="post">
     <input type="text" name="nome" placeholder="Seu nome" required />
     <input type="email" name="email" placeholder="Seu e-mail" required />
     <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
@@ -70,34 +70,6 @@
   </form>
 </section>
   </div>
-
-<script>
-  const form = document.getElementById("formulario");
-
-form.addEventListener("submit", e => {
-  e.preventDefault();
-
-  fetch("https://script.google.com/macros/s/AKfycbxsdpQhWl86gdQEon9vL6krmXk3DvFsaTWrxxLsyZ4/devhttps://script.google.com/macros/s/AKfycbwxU3AC01QGraGYIhbc5wLy5jrKiS0EfCaa0MgTWpy2in9OcUp3y5H85MXM2q6HUNFD/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      nome: form.nome.value,
-      email: form.email.value,
-      mensagem: form.mensagem.value
-    })
-  })
-  .then(res => res.text())
-  .then(msg => {
-    alert("Mensagem enviada com sucesso!");
-    form.reset();
-  })
-  .catch(() => {
-    alert("Ocorreu um erro ao enviar sua mensagem.");
-  });
-}); 
-</script> 
 
   <footer>
     <p>&copy; 2025 MSA Hyperautomação | Todos os direitos reservados</p>
