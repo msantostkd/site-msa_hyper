@@ -15,10 +15,7 @@ body {
 
 /* Header / Hero */
 #menusuperior {
-  background-image: url(imagens/fundo-menusuperior.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   color: white;
   padding: 40px 25px;
   display: flex;
@@ -26,7 +23,22 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 0;
+  overflow: hidden;
 }
+
+#menusuperior::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(imagens/fundo-menusuperior.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6; /* controla a transparência */
+  z-index: -1;
+}
+
 
 .container-menu {
   width: 100%;
@@ -39,7 +51,7 @@ body {
 }
 
 #logo {
-  width: 200px;
+  width: 100%;
   height: auto;
 }
 
@@ -52,12 +64,15 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
   color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 #texto-menusuperior {
   font-size: 1.3rem;
   font-weight: 300;
-  color: #d0d0d0;
+  color: #fcfafa;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
 }
 
 /* Seções principais */
@@ -195,11 +210,12 @@ footer {
   }
 
   #logo {
+    max-width: 150px;
     margin-bottom: 20px;
   }
 
   .texto-menu {
-    max-width: 100%;
+    max-width: 100%;    
   }
 
   .servicos-destaque {
