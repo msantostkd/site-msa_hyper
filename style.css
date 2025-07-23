@@ -215,7 +215,8 @@ footer {
   }
 
   .texto-menu {
-    max-width: 100%;    
+    max-width: 100%;
+    margin-top: 20px;    
   }
 
   .servicos-destaque {
@@ -233,4 +234,5 @@ footer {
 
   #titulo-menu {
     font-size: 1.8rem;
+  }
 }
