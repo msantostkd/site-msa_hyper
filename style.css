@@ -230,4 +230,7 @@ footer {
   footer {
     padding: 20px 10px;
   }
+
+  #titulo-menu {
+    font-size: 1.8rem;
 }
